@@ -459,40 +459,6 @@ export function Hero() {
                   }}
                 />
               </motion.div>
-
-              {/* ── Floating stat: bottom-left ── */}
-              <motion.div
-                className="absolute -bottom-5 left-2 sm:-bottom-8 sm:-left-8 px-5 py-4 rounded-2xl bg-white/[0.03] backdrop-blur-2xl border border-white/[0.06]"
-                animate={{ y: [0, -7, 0], x: smoothMouse.x * -8 }}
-                transition={{
-                  y: { duration: 4.5, repeat: Infinity, ease: "easeInOut" },
-                  x: { type: "spring", stiffness: 35, damping: 18 },
-                }}
-              >
-                <p className="font-display font-bold text-2xl text-gold">
-                  5<span className="text-gold/50">+</span>
-                </p>
-                <p className="text-white/25 text-[10px] tracking-[0.18em] uppercase mt-0.5">
-                  Years Exp
-                </p>
-              </motion.div>
-
-              {/* ── Floating stat: top-right ── */}
-              <motion.div
-                className="absolute -top-3 right-0 sm:-top-5 sm:-right-6 px-5 py-4 rounded-2xl bg-white/[0.03] backdrop-blur-2xl border border-white/[0.06]"
-                animate={{ y: [0, 7, 0], x: smoothMouse.x * 8 }}
-                transition={{
-                  y: { duration: 5.5, repeat: Infinity, ease: "easeInOut" },
-                  x: { type: "spring", stiffness: 35, damping: 18 },
-                }}
-              >
-                <p className="font-display font-bold text-2xl text-gold">
-                  150<span className="text-gold/50">+</span>
-                </p>
-                <p className="text-white/25 text-[10px] tracking-[0.18em] uppercase mt-0.5">
-                  Projects
-                </p>
-              </motion.div>
             </motion.div>
           </div>
         </div>
