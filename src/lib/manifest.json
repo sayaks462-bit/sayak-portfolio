@@ -1,0 +1,302 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "slug": "spa-bathroom",
+      "title": "Spa-Inspired Bathroom",
+      "category": "interior",
+      "description": "A serene bathroom retreat with natural stone, rainfall shower, and ambient lighting for ultimate relaxation.",
+      "details": "This spa-inspired bathroom transforms a functional space into a personal retreat. Using natural stone tiles, a freestanding soaking tub, rainfall shower system, and layered ambient lighting, the design creates a tranquil environment. Built-in niches, heated floors, and smart mirror technology add modern convenience.",
+      "image": "/images/projects/interior/bathroom.jpg",
+      "images": [
+        "/images/projects/interior/bathroom.jpg"
+      ],
+      "tags": [
+        "Bathroom",
+        "Spa",
+        "Luxury",
+        "Natural Stone"
+      ],
+      "year": "2025"
+    },
+    {
+      "id": "2",
+      "slug": "master-bedroom-suite",
+      "title": "Master Bedroom Suite",
+      "category": "interior",
+      "description": "A luxurious bedroom retreat with custom headboard, layered textiles, and dreamy ambient lighting.",
+      "details": "This master bedroom suite is designed as the ultimate personal sanctuary. A custom upholstered headboard serves as the focal point, complemented by layered bedding in rich textures. The lighting design includes concealed LED strips, bedside sconces, and a statement chandelier, all controlled by a smart home system for effortless mood setting.",
+      "image": "/images/projects/interior/bedroom.jpg",
+      "images": [
+        "/images/projects/interior/bedroom.jpg"
+      ],
+      "tags": [
+        "Bedroom",
+        "Master Suite",
+        "Luxury",
+        "Smart Home"
+      ],
+      "year": "2025"
+    },
+    {
+      "id": "3",
+      "slug": "luxury-modern-kitchen",
+      "title": "Luxury Modern Kitchen",
+      "category": "interior",
+      "description": "A premium kitchen design featuring marble countertops, custom cabinetry, and ambient lighting for a sophisticated culinary space.",
+      "details": "This luxury kitchen was designed for a high-end residential property, focusing on clean lines, premium materials, and functional elegance. The design incorporates Italian marble countertops, custom walnut cabinetry, integrated smart appliances, and a carefully planned lighting scheme that creates warmth while maintaining a modern aesthetic.",
+      "image": "/images/projects/interior/kitchen.jpg",
+      "images": [
+        "/images/projects/interior/kitchen.jpg"
+      ],
+      "tags": [
+        "Kitchen",
+        "Modern",
+        "Luxury",
+        "Residential"
+      ],
+      "year": "2025"
+    },
+    {
+      "id": "4",
+      "slug": "elegant-living-room",
+      "title": "Elegant Living Room",
+      "category": "interior",
+      "description": "A sophisticated living space with bespoke furniture, rich textures, and a warm color palette creating an inviting atmosphere.",
+      "details": "This elegant living room was crafted to be both a sanctuary and a statement. Featuring custom-designed furniture pieces, hand-selected fabrics, and a curated art collection, every element works harmoniously. The warm lighting design and carefully chosen accent pieces create an atmosphere of refined comfort.",
+      "image": "/images/projects/interior/living-room.jpg",
+      "images": [
+        "/images/projects/interior/living-room.jpg"
+      ],
+      "tags": [
+        "Living Room",
+        "Elegant",
+        "Custom Furniture"
+      ],
+      "year": "2025"
+    },
+    {
+      "id": "5",
+      "slug": "calvin-klein-exhibition",
+      "title": "Calvin Klein Exhibition Stall",
+      "category": "exhibition",
+      "description": "A minimalist yet impactful exhibition stall for Calvin Klein with monochrome palette and architectural simplicity.",
+      "details": "True to the Calvin Klein aesthetic, this exhibition stall embraces minimalist design principles. The monochrome palette, clean architectural forms, and strategic use of negative space create a powerful visual impact. Large-format product imagery, precision lighting, and premium material details elevate the brand presentation while maintaining simplicity.",
+      "image": "/images/projects/exhibition/calvin-klein.jpg",
+      "images": [
+        "/images/projects/exhibition/calvin-klein.jpg"
+      ],
+      "tags": [
+        "Exhibition",
+        "Calvin Klein",
+        "Minimalist",
+        "Monochrome"
+      ],
+      "year": "2024"
+    },
+    {
+      "id": "6",
+      "slug": "elan-exhibition",
+      "title": "Elan Exhibition Stall",
+      "category": "exhibition",
+      "description": "A bold and dynamic exhibition stall for Elan with geometric forms, dramatic lighting, and luxury finishes.",
+      "details": "The Elan exhibition stall makes a powerful statement with its bold geometric architecture and dramatic lighting design. Premium finishes including polished metal, backlit onyx panels, and custom LED installations create a luxurious ambiance. The layout strategically guides visitors through an immersive brand journey with product showcases and VIP meeting areas.",
+      "image": "/images/projects/exhibition/elan.jpg",
+      "images": [
+        "/images/projects/exhibition/elan.jpg"
+      ],
+      "tags": [
+        "Exhibition",
+        "Elan",
+        "Geometric",
+        "Luxury"
+      ],
+      "year": "2025"
+    },
+    {
+      "id": "7",
+      "slug": "rare-beauty-exhibition",
+      "title": "Rare Beauty Exhibition Stall",
+      "category": "exhibition",
+      "description": "A stunning exhibition stall design for Rare Beauty featuring organic forms, premium materials, and immersive brand experience.",
+      "details": "The Rare Beauty exhibition stall was designed to embody the brand's philosophy of embracing individuality. The organic flowing forms, soft curves, and warm metallic accents create an inviting space. Interactive display stations, a makeup trial area, and Instagram-worthy photo spots ensure maximum visitor engagement and brand recall.",
+      "image": "/images/projects/exhibition/rare-beauty.jpg",
+      "images": [
+        "/images/projects/exhibition/rare-beauty.jpg"
+      ],
+      "tags": [
+        "Exhibition",
+        "Rare Beauty",
+        "Brand Experience",
+        "Interactive"
+      ],
+      "year": "2025"
+    },
+    {
+      "id": "8",
+      "slug": "titan-exhibition",
+      "title": "Titan Exhibition Stall",
+      "category": "exhibition",
+      "description": "A sleek and modern exhibition stall for Titan with precision design, premium displays, and sophisticated brand presentation.",
+      "details": "The Titan exhibition stall reflects the brand's commitment to precision and craftsmanship. Clean architectural lines, precision-engineered display cases, and sophisticated material combinations create an atmosphere of refined luxury. The lighting design highlights product showcases while ambient elements create an engaging visitor experience.",
+      "image": "/images/projects/exhibition/titan.jpg",
+      "images": [
+        "/images/projects/exhibition/titan.jpg"
+      ],
+      "tags": [
+        "Exhibition",
+        "Titan",
+        "Precision",
+        "Modern"
+      ],
+      "year": "2024"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "g1",
+      "src": "/images/gallery/img-1.jpg",
+      "alt": "Img 1",
+      "category": "All",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g2",
+      "src": "/images/gallery/img-2.jpg",
+      "alt": "Img 2",
+      "category": "All",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g3",
+      "src": "/images/gallery/img-3.jpg",
+      "alt": "Img 3",
+      "category": "All",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g4",
+      "src": "/images/gallery/img-4.jpg",
+      "alt": "Img 4",
+      "category": "All",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g5",
+      "src": "/images/gallery/img-5.jpg",
+      "alt": "Img 5",
+      "category": "All",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g6",
+      "src": "/images/gallery/img-6.jpg",
+      "alt": "Img 6",
+      "category": "All",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g7",
+      "src": "/images/gallery/img-7.jpg",
+      "alt": "Img 7",
+      "category": "All",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g8",
+      "src": "/images/gallery/img-8.jpg",
+      "alt": "Img 8",
+      "category": "All",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g9",
+      "src": "/images/projects/interior/bathroom.jpg",
+      "alt": "Spa-Inspired Bathroom",
+      "category": "Interior",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g10",
+      "src": "/images/projects/interior/bedroom.jpg",
+      "alt": "Master Bedroom Suite",
+      "category": "Interior",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g11",
+      "src": "/images/projects/interior/kitchen.jpg",
+      "alt": "Luxury Modern Kitchen",
+      "category": "Interior",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g12",
+      "src": "/images/projects/interior/living-room.jpg",
+      "alt": "Elegant Living Room",
+      "category": "Interior",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g13",
+      "src": "/images/projects/exhibition/calvin-klein.jpg",
+      "alt": "Calvin Klein Exhibition Stall",
+      "category": "Exhibition",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g14",
+      "src": "/images/projects/exhibition/elan.jpg",
+      "alt": "Elan Exhibition Stall",
+      "category": "Exhibition",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g15",
+      "src": "/images/projects/exhibition/rare-beauty.jpg",
+      "alt": "Rare Beauty Exhibition Stall",
+      "category": "Exhibition",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    },
+    {
+      "id": "g16",
+      "src": "/images/projects/exhibition/titan.jpg",
+      "alt": "Titan Exhibition Stall",
+      "category": "Exhibition",
+      "width": 800,
+      "height": 600,
+      "span": 1
+    }
+  ],
+  "scannedAt": "2026-07-21T12:39:10.162Z"
+}
