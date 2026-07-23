@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { Project } from "@/types";
 import { ArrowUpRight, Eye } from "lucide-react";
@@ -12,7 +12,7 @@ interface ProjectCardProps {
   index?: number;
 }
 
-export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+export const ProjectCard = React.memo(function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -175,4 +175,4 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       </Link>
     </motion.div>
   );
-}
+});

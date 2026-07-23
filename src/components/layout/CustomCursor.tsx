@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -48,26 +47,34 @@ export function CustomCursor() {
     const interactives = document.querySelectorAll(
       "a, button, [data-cursor-hover]"
     );
+    const tracked = new WeakSet<EventTarget>();
     interactives.forEach((el) => {
       el.addEventListener("mouseenter", handleMouseEnter);
       el.addEventListener("mouseleave", handleMouseLeave);
+      tracked.add(el);
     });
 
+    let debounceTimer: ReturnType<typeof setTimeout>;
     const observer = new MutationObserver(() => {
-      const newInteractives = document.querySelectorAll(
-        "a, button, [data-cursor-hover]"
-      );
-      newInteractives.forEach((el) => {
-        el.removeEventListener("mouseenter", handleMouseEnter);
-        el.removeEventListener("mouseleave", handleMouseLeave);
-        el.addEventListener("mouseenter", handleMouseEnter);
-        el.addEventListener("mouseleave", handleMouseLeave);
-      });
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        const newInteractives = document.querySelectorAll(
+          "a, button, [data-cursor-hover]"
+        );
+        newInteractives.forEach((el) => {
+          if (!tracked.has(el)) {
+            el.addEventListener("mouseenter", handleMouseEnter);
+            el.addEventListener("mouseleave", handleMouseLeave);
+            tracked.add(el);
+          }
+        });
+      }, 100);
     });
 
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
+      clearTimeout(debounceTimer);
       window.removeEventListener("mousemove", handleMouseMove);
       observer.disconnect();
       interactives.forEach((el) => {

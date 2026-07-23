@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback, useMemo } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useMemo } from "react";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { MagneticButton } from "../animations/MagneticButton";
@@ -13,16 +13,16 @@ import {
 } from "lucide-react";
 
 /* ── WhatsApp SVG ────────────────────────────────────── */
-function WhatsAppIcon({ size = 16 }: { size?: number }) {
+const WhatsAppIcon = React.memo(function WhatsAppIcon({ size = 16 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
     </svg>
   );
-}
+});
 
 /* ── Particles ───────────────────────────────────────── */
-function Particles() {
+const Particles = React.memo(function Particles() {
   const particles = useMemo(
     () =>
       Array.from({ length: 50 }, (_, i) => ({
@@ -70,29 +70,31 @@ function Particles() {
       ))}
     </div>
   );
-}
+});
 
 /* ── Main Hero ───────────────────────────────────────── */
 export function Hero() {
-  const [smoothMouse, setSmoothMouse] = useState({ x: 0, y: 0 });
+  const smoothX = useMotionValue(0);
+  const smoothY = useMotionValue(0);
   const heroRef = useRef<HTMLElement>(null);
   const rafRef = useRef<number>(0);
   const mouseTarget = useRef({ x: 0, y: 0 });
-
-  const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
-
-  const animate = useCallback(() => {
-    setSmoothMouse((prev) => ({
-      x: lerp(prev.x, mouseTarget.current.x, 0.06),
-      y: lerp(prev.y, mouseTarget.current.y, 0.06),
-    }));
-    rafRef.current = requestAnimationFrame(animate);
-  }, []);
+  const currentPos = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+
+    const animate = () => {
+      currentPos.current.x = lerp(currentPos.current.x, mouseTarget.current.x, 0.06);
+      currentPos.current.y = lerp(currentPos.current.y, mouseTarget.current.y, 0.06);
+      smoothX.set(currentPos.current.x);
+      smoothY.set(currentPos.current.y);
+      rafRef.current = requestAnimationFrame(animate);
+    };
+
     rafRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(rafRef.current);
-  }, [animate]);
+  }, [smoothX, smoothY]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -109,6 +111,13 @@ export function Hero() {
 
   const ease = [0.16, 1, 0.3, 1] as const;
 
+  const blob1X = useTransform(smoothX, (v) => v * 50);
+  const blob1Y = useTransform(smoothY, (v) => v * 50);
+  const blob2X = useTransform(smoothX, (v) => v * -35);
+  const blob2Y = useTransform(smoothY, (v) => v * -35);
+  const portraitRotateY = useTransform(smoothX, (v) => v * 7);
+  const portraitRotateX = useTransform(smoothY, (v) => v * -7);
+
   return (
     <section
       ref={heroRef}
@@ -121,10 +130,8 @@ export function Hero() {
         {/* Primary gold blob — follows mouse */}
         <motion.div
           className="absolute top-[-15%] left-[-8%] w-[65vw] h-[65vw] max-w-[750px] max-h-[750px] rounded-full opacity-[0.04]"
-          style={{ background: "radial-gradient(circle, #C7A14A 0%, transparent 60%)" }}
+          style={{ background: "radial-gradient(circle, #C7A14A 0%, transparent 60%)", x: blob1X, y: blob1Y }}
           animate={{
-            x: smoothMouse.x * 50,
-            y: smoothMouse.y * 50,
             scale: [1, 1.1, 1],
           }}
           transition={{
@@ -137,10 +144,8 @@ export function Hero() {
         {/* Secondary gold blob — opposite drift */}
         <motion.div
           className="absolute bottom-[-15%] right-[-8%] w-[55vw] h-[55vw] max-w-[650px] max-h-[650px] rounded-full opacity-[0.025]"
-          style={{ background: "radial-gradient(circle, #C7A14A 0%, transparent 60%)" }}
+          style={{ background: "radial-gradient(circle, #C7A14A 0%, transparent 60%)", x: blob2X, y: blob2Y }}
           animate={{
-            x: smoothMouse.x * -35,
-            y: smoothMouse.y * -35,
             scale: [1, 1.15, 1],
           }}
           transition={{
@@ -416,17 +421,15 @@ export function Hero() {
                 className="relative w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[370px] md:h-[370px] lg:w-[430px] lg:h-[430px] xl:w-[500px] xl:h-[500px] rounded-full overflow-hidden"
                 animate={{
                   y: [0, -12, 0],
-                  rotateY: smoothMouse.x * 7,
-                  rotateX: smoothMouse.y * -7,
                 }}
                 transition={{
                   y: { duration: 5.5, repeat: Infinity, ease: "easeInOut" },
-                  rotateY: { type: "spring", stiffness: 35, damping: 18 },
-                  rotateX: { type: "spring", stiffness: 35, damping: 18 },
                 }}
                 style={{
                   perspective: "900px",
                   transformStyle: "preserve-3d",
+                  rotateY: portraitRotateY,
+                  rotateX: portraitRotateX,
                   boxShadow:
                     "0 0 100px rgba(199,161,74,0.1), 0 0 200px rgba(199,161,74,0.05)",
                 }}

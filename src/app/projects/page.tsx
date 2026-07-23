@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { RevealTextWords } from "@/components/animations/RevealText";
-import { StaggerChildren } from "@/components/animations/StaggerChildren";
 import { getProjectsByCategory } from "@/lib/data";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 

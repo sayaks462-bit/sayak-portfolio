@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { FadeIn, ScaleIn } from "@/components/animations/FadeIn";
+import { FadeIn } from "@/components/animations/FadeIn";
 import { RevealTextWords } from "@/components/animations/RevealText";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import {

@@ -6,8 +6,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { RevealTextWords } from "@/components/animations/RevealText";
 import { galleryItems } from "@/lib/data";
-import { GalleryLightbox } from "@/components/ui/GalleryLightbox";
+import dynamic from "next/dynamic";
 import { ZoomIn } from "lucide-react";
+
+const GalleryLightbox = dynamic(
+  () => import("@/components/ui/GalleryLightbox").then((m) => m.GalleryLightbox),
+  { ssr: false }
+);
 
 /* ── Aspect ratios for Pinterest feel ──────────────────── */
 const ASPECTS = ["aspect-[3/4]", "aspect-[4/5]", "aspect-[3/4]", "aspect-[4/5]", "aspect-[1/1]"];

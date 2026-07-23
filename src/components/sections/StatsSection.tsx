@@ -1,7 +1,6 @@
 "use client";
 
 import { FadeIn, ScaleIn } from "../animations/FadeIn";
-import { RevealTextWords } from "../animations/RevealText";
 import { counters } from "@/lib/data";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";

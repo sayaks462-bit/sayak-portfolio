@@ -1,4 +1,4 @@
-import { Project, GalleryItem, Skill, TimelineItem, CounterItem } from "@/types";
+import { Project, GalleryItem, CounterItem } from "@/types";
 
 // Projects and gallery are auto-generated from public/images/projects/* at build time.
 // Run: npm run generate  (also runs automatically via prebuild)
@@ -25,37 +25,6 @@ export const projects: Project[] = (manifest.projects as Array<
 }));
 
 export const galleryItems: GalleryItem[] = manifest.gallery;
-
-export const skills: Skill[] = [
-  { name: "3ds Max", percentage: 95, icon: "box" },
-  { name: "V-Ray", percentage: 92, icon: "sparkles" },
-  { name: "AutoCAD", percentage: 85, icon: "ruler" },
-  { name: "Photoshop", percentage: 88, icon: "image" },
-  { name: "CorelDRAW", percentage: 80, icon: "pen-tool" },
-];
-
-export const timeline: TimelineItem[] = [
-  {
-    year: "2020",
-    title: "Started Freelancing",
-    description: "Began independent 3D visualization projects for residential and commercial clients.",
-  },
-  {
-    year: "2021",
-    title: "Exhibition Design",
-    description: "Expanded into exhibition stall design, creating immersive brand experiences.",
-  },
-  {
-    year: "2023",
-    title: "Studio Founded",
-    description: "Established a professional 3D visualization studio serving premium clients.",
-  },
-  {
-    year: "2025",
-    title: "Industry Recognition",
-    description: "Recognized for excellence in photorealistic rendering and luxury interior visualization.",
-  },
-];
 
 export const counters: CounterItem[] = [
   { label: "Projects Completed", value: 150, suffix: "+" },

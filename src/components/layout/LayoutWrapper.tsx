@@ -3,12 +3,21 @@
 import { useLenis } from "@/hooks/useLenis";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
-import { CustomCursor } from "./CustomCursor";
 import { ScrollProgress } from "./ScrollProgress";
-import { LoadingScreen } from "./LoadingScreen";
 import { PageTransition } from "@/components/animations/PageTransition";
 import { ToastProvider } from "@/components/ui/Toast";
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+
+const CustomCursor = dynamic(
+  () => import("./CustomCursor").then((m) => m.CustomCursor),
+  { ssr: false }
+);
+
+const LoadingScreen = dynamic(
+  () => import("./LoadingScreen").then((m) => m.LoadingScreen),
+  { ssr: false }
+);
 
 export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   useLenis();

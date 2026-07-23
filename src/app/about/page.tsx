@@ -17,8 +17,6 @@ import {
   ArrowUpRight,
   Briefcase,
   Award,
-  Clock,
-  Users,
 } from "lucide-react";
 
 /* ── Data ─────────────────────────────────────────────── */

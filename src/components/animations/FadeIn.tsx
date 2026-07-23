@@ -75,35 +75,4 @@ export function ScaleIn({ children, className = "", delay = 0 }: ScaleInProps) {
   );
 }
 
-interface SlideInProps {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-  direction?: "left" | "right";
-}
 
-export function SlideIn({
-  children,
-  className = "",
-  delay = 0,
-  direction = "left",
-}: SlideInProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      initial={{ x: direction === "left" ? -60 : 60, opacity: 0 }}
-      animate={isInView ? { x: 0, opacity: 1 } : { x: direction === "left" ? -60 : 60, opacity: 0 }}
-      transition={{
-        duration: 0.8,
-        delay,
-        ease: [0.16, 1, 0.3, 1],
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
